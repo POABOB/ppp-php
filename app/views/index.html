@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+
+{% for val in data %}
+<div class="panel panel-default">
+    <div class="panel-heading"><a href="{{ '/Message/info/id/'|base_url }}{{val.id}}">{{val.title}}</a></div>
+    <div class="panel-body">
+      <a href="{{ '/Message/info/id/'|base_url }}{{val.id}}">{{val.content|slice(0, 5) ~ '...' }}</a> 
+      <p>{{val.create_at|date('Y-m-d H:i:s')}}</p>
+      <p><a href="{{ '/Message/del/id/'|base_url }}{{val.id}}">删除</a></p>
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock %}

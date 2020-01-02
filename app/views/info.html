@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="panel panel-default">
+    <div class="panel-heading">{{data.title}}</div>
+    <div class="panel-body">
+      {{data.content}} 
+      <p>{{data.create_at|date('Y-m-d H:i:s')}}</p>
+      <p><a href="{{ '/Message/edit/id/'|base_url }}{{data.id}}">編輯</a> | <a href="{{ '/Message/del/id/'|base_url }}{{data.id}}">删除</a></p>
+    </div>
+  </div>
+
+{% endblock %}
